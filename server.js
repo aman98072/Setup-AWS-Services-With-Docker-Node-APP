@@ -3,7 +3,7 @@ const app = express();
 const port = 8001;
 
 app.get('/home', (req, res) => {
-    res.send('hello 1');
+    res.send('Project setup by docker Mr. Aman Gupta');
 });
 
 app.listen(port, () => {
