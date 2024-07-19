@@ -11,7 +11,7 @@ COPY . .
 RUN npm install
 
 # Make port 3002 available to the world outside this container
-EXPOSE 3002
+EXPOSE 8001
 
 # Run the command 'npm start' to start the application
 CMD ["npm", "start"] 
