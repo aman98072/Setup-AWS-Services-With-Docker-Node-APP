@@ -1,0 +1,70 @@
+Running Container in Deattch Mode : 
+It will run container in background
+
+
+What is Docker ?
+Docker is an open-source platform designed to automate the deployment, scaling, and management of applications. It allows developers to package applications along with their dependencies into a standardized unit called a container. These containers are portable and ensure that the application runs consistently across different environments, from development to production.
+
+Key Concepts
+Docker Engine: The core component responsible for creating and running Docker containers.
+
+Dockerfile: A text file containing a series of instructions on how to build a Docker image.
+
+Docker Image: A read-only template used to create Docker containers. It includes the application code, libraries, and dependencies.
+
+Docker Container: A lightweight, standalone, and executable package that includes everything needed to run a piece of software, including code, runtime, libraries, and configurations.
+
+Docker Hub/Registry: A cloud-based repository where Docker users can create, test, store, and distribute container images.
+
+
+How docker actually work :
+Docker run hello-world : for running hello-world image command when this command is running then docker client hits docker server and docker server just checks firstly from docker server cache if image already exists then its return otherwise it is pull image from docker hub website. 
+
+
+
+docker run <image_name> : get all directory code into system through image command
+Example : 
+docker run hello-world : basically install hello-world image resource into system
+docker run hello-world ls : its print all directory and files 
+docker run hello-world echo “Install successfully” : it means it prints my message which is installed successfully.
+docker run -it -d <image_name> : -it (interactive) and -d (detached means run this image in background)
+docker run -it -d --name <alias_names_of_image_file> <image_name> : -it (interactive) and -d (detached means run this image in background)
+docker run -it -d --name <alias_names_of_image_file> -p <port_number> <image_name> : -it (interactive) and -d (detached means run this image in background)
+docker run –rm -it -d --name <alias_names_of_image_file> -p <port_number> <image_name> : -it (interactive) and -d (detached means run this image in background) –rm (when container is stop then it will automatically deleted)
+
+
+docker ps : show all active process 
+docker pull <image_name> : docker pull image
+docker ps --all : show all stop and active process
+docker stop <process_id>  : stop process id in docker
+docker kill <process_id> : forcefully stop process id in docker
+docker run : means two command run internally  docker create + docker start
+docker create hello-world : install resource hello-world in docker and return hash string
+docker start -a <hash_string> : it is start the docker hello world package
+docker exec -i -t <process_id> sh : execute command like ls, pwd in current process id of image file 
+1. -i : means for internally call command in current process id
+2. -t : for formatting
+3. Sh : for connecting to current process id
+docker images : show all docker images which are start in current system  
+docker images -a : show all docker images in the current system.
+docker rm -r <container_id> : remove container 
+docker restart <container_id> : restart container
+docker start <container_id> : start container 
+docker rmi <image_name> : remove image from docker
+docker login : login from terminal in docker
+docker search <image_name>: The script will crawl Docker Hub and return a listing of all images whose name matches the image name.
+docker rm -f $(docker ps -a -q) : Remove all docker container
+docker container ls : list of container
+docker search <package_name> : search package name in docker hub
+docker attach <image_name> : go inside container for running command but first container must be start
+docker info : for checking docker machine is on or not    
+docker diff <image_name> : check difference in image 
+docker commit <container_name/id> <image_name_u_want> : create image from container
+docker run -it --name container2 (new) --privileged=true --volume-from container1 (old) <image_name> bin/bash : assign new container to volume
+docker volume ls : show volume list
+docker volume create <volume_name> : create volume 
+docker volume rm <vol_name> : remove volume  
+docker volume prune : it will remove all unused volume 
+docker volume inspect <vol_name> : it tell all the details about volume
+docker container inspect <container_name/id> :  it tell all the details about volume
+
